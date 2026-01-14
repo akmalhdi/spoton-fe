@@ -5,9 +5,9 @@ import ProductsSection from "./components/home/products";
 export default function Home() {
   return (
     <main>
-      <HeroSection/>
-      <CategoriesSection/>
-    <ProductsSection />
+      <HeroSection />
+      <CategoriesSection />
+      <ProductsSection />
     </main>
   );
 }
