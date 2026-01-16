@@ -11,9 +11,11 @@ const Header = () => {
   return (
     <header>
       <div className="flex justify-between gap-10 container mx-auto py-7">
-        <Image src="/images/logo.svg" alt="SportOn Logo" width={127} height={30} />
+        <Link href="/">
+          <Image src="/images/logo.svg" alt="SportOn Logo" width={127} height={30} />
+        </Link>
         <nav className="flex gap-44 font-medium">
-          <Link href="#" className="relative after:content-[''] after:block after:bg-primary after:rounded-full after:h-0.75 after:w-1/2 after:absolute after:left-1/2 after:-translate-x-1/2 after:translate-y-1 ">
+          <Link href="/" className="relative after:content-[''] after:block after:bg-primary after:rounded-full after:h-0.75 after:w-1/2 after:absolute after:left-1/2 after:-translate-x-1/2 after:translate-y-1 ">
             Home
           </Link>
           <Link href="#">Category</Link>
@@ -21,7 +23,7 @@ const Header = () => {
         </nav>
         <div className="relative flex gap-10">
           <FiSearch size={24} />
-          <button className="relative" onClick={() => setIsCartPopupOpen(!isCartPopupOpen)}>
+          <button className="relative cursor-pointer" onClick={() => setIsCartPopupOpen(!isCartPopupOpen)}>
             <FiShoppingBag size={24} />
             <div className="bg-primary rounded-full w-3.5 h-3.5 absolute -top-1 -right-1 text-[10px] text-white text-center">3</div>
           </button>

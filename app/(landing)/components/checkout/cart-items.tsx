@@ -1,59 +1,23 @@
-import priceFormatter from "@/app/utils/price-formatter";
+"use client"
 import Image from "next/image";
-import Button from "./button";
-import { FiArrowRight, FiTrash2 } from "react-icons/fi";
+import { cartList } from "../ui/cart-popup";
+import priceFormatter from "@/app/utils/price-formatter";
+import Button from "../ui/button";
+import { FiCreditCard, FiTrash2 } from "react-icons/fi";
+import CardWithHeader from "../ui/card-with-header";
 import { useRouter } from "next/navigation";
 
-export const cartList = [
-  {
-    name: "SportOn Product 1",
-    category: "Running",
-    price: 450000,
-    qty: 2,
-    imgUrl: "product-1.png",
-  },
-  {
-    name: "SportOn Product 2",
-    category: "Tennis",
-    price: 450000,
-    qty: 2,
-    imgUrl: "product-2.png",
-  },
-  {
-    name: "SportOn Product 3",
-    category: "Running",
-    price: 450000,
-    qty: 2,
-    imgUrl: "product-3.png",
-  },
-  {
-    name: "SportOn Product 3",
-    category: "Running",
-    price: 450000,
-    qty: 2,
-    imgUrl: "product-3.png",
-  },
-  {
-    name: "SportOn Product 3",
-    category: "Running",
-    price: 450000,
-    qty: 2,
-    imgUrl: "product-3.png",
-  },
-];
-
-const CartPopup = () => {
-  const { push } = useRouter();
+const CartItems = () => {
+  const {push} = useRouter();
 
   const totalPrice = cartList.reduce((total, item) => total + item.price * item.qty, 0);
 
-  const handleCheckOut = () => {
-    push("/checkout");
-  };
+  const payment = () => {
+
+  }
 
   return (
-    <div className="absolute bg-white right-0 top-12 shadow-xl shadow-black/10 border border-gray-200 w-90 z-10">
-      <div className="p-4 border-b border-gray-200 font-bold text-center">Shopping Cart</div>
+    <CardWithHeader title="Cart Items">
       <div className="overflow-auto max-h-75">
         {cartList.map((item, index) => (
           <div className="border-b border-gray-200 p-4 flex gap-3" key={index}>
@@ -73,17 +37,18 @@ const CartPopup = () => {
           </div>
         ))}
       </div>
+
       <div className="border-t border-gray-200 p-4">
         <div className="flex justify-between font-semibold">
           <div className="text-sm">Total</div>
           <div className="text-primary text-xs">{priceFormatter(totalPrice)}</div>
         </div>
-        <Button variant="dark" size="small" className="w-full mt-5" onClick={handleCheckOut}>
-          Checkout Now <FiArrowRight />
+        <Button variant="dark" className="w-full mt-5" onClick={() => push("/payment")}>
+          <FiCreditCard /> Proceed to Payment
         </Button>
       </div>
-    </div>
+    </CardWithHeader>
   );
 };
 
-export default CartPopup;
+export default CartItems;
