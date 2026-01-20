@@ -11,7 +11,7 @@ const Header = () => {
   const [isCartPopupOpen, setIsCartPopupOpen] = useState(false);
 
   return (
-    <header>
+    <header className="fixed w-full z-20 backdrop:backdrop-blur-xl bg-white/50">
       <div className="flex justify-between gap-10 container mx-auto py-7">
         <Link href="/">
           <Image src="/images/logo.svg" alt="SportOn Logo" width={127} height={30} />
