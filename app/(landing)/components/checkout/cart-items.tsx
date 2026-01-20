@@ -1,6 +1,5 @@
 "use client"
 import Image from "next/image";
-import { cartList } from "../ui/cart-popup";
 import priceFormatter from "@/app/utils/price-formatter";
 import Button from "../ui/button";
 import { FiCreditCard, FiTrash2 } from "react-icons/fi";
