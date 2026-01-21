@@ -23,8 +23,7 @@ html {
   @apply font-poppins;
 }
 
-/* input group */
-
+/* INPUT GROUP */
 .input-group {
   @apply mb-5;
 }
@@ -35,5 +34,5 @@ html {
 
 .input-group input,
 .input-group textarea {
-  @apply px-4 py-2.5 bg-gray-100 w-full focus:border focus:border-gray-200 outline-none text-sm;
+  @apply px-4 py-2.5 bg-gray-100 w-full focus:border focus:border-gray-400 outline-none text-sm;
 }
