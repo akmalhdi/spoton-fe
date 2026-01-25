@@ -46,8 +46,9 @@ const Sidebar = () => {
           );
         })}
       </div>
-      <Link href="#" className="flex gap-3 font-medium mx-5 py-5 px-4.5 hover:bg-gray-100 duration-300 rounded-lg items-center mt-auto">
-      <FiLogOut/>Log out
+      <Link href="#" className="flex gap-3 font-medium mx-5 py-5 px-4.5 mb-5 hover:bg-gray-100 duration-300 rounded-lg items-center mt-auto">
+        <FiLogOut />
+        Log out
       </Link>
     </aside>
   );
